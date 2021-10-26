@@ -9,7 +9,6 @@
   <body>
     <div id="app"></div>
 
-    <!-- 添加React的依赖 -->
     <script
       src="https://unpkg.com/react@16/umd/react.development.js"
       crossorigin
@@ -20,43 +19,24 @@
     ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-    <!-- jsx -->
     <script type="text/babel">
-      // 封装 App 组件
       class App extends React.Component {
         constructor() {
           super()
-          // 必须使用 this.state 这个对象来存放响应式数据
-
           this.state = {
             message: 'Hello World',
           }
         }
 
         render() {
-          // () 仅作代码片段
-          // this.btnClick.bind(this) 将组件实例的 this 传递给函数
           return (
             <div>
-              <h1>{this.state.message}</h1>
-              <button onClick={this.btnClick.bind(this)}>改变信息</button>
+              {/* 我是jsx的注释 */}
+              <div>{this.state.message}</div>
             </div>
           )
         }
-
-        btnClick() {
-          // console.log(this)
-          // 函数被独立调用 this绑定的是 undefined 原理 this.btnClick.apply(undefined)
-          // this.state.message = 'Hello React'这样是不可以的，
-          // 必须使用专门的函数来调用修改数据
-          // React 才能进行自动数据监听从而重新渲染组件
-          this.setState({
-            message: 'Hello React',
-          })
-        }
       }
-
-      // 渲染组件
       ReactDOM.render(<App />, document.getElementById('app'))
     </script>
   </body>
