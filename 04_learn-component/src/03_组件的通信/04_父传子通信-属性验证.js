@@ -23,10 +23,6 @@ export default class APP extends Component {
 }
 
 class ChildCpn2 extends Component {
-  constructor() {
-    super()
-  }
-
   render() {
     const { name, age, nums } = this.props
     return (
