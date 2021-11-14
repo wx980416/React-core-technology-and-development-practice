@@ -12,6 +12,6 @@ import ReactDOM from 'react-dom'
 // import App from './06_跨组件通信/03_跨组件通信-context函数'
 
 // import App from './07_setState的使用/05_setState本身的合并'
-import App from './10_受控和非受控组件/05_非受控组件的使用'
+import App from './10_受控和非受控组件（表单）/05_非受控组件的使用'
 
 ReactDOM.render(<App />, document.getElementById('root'))
