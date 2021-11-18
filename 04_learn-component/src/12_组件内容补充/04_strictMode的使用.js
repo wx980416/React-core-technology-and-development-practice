@@ -1,10 +1,10 @@
-import React, { PureComponent, StrictMode } from 'react';
+import React, { PureComponent, StrictMode } from 'react'
 
 class Home extends PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
 
-    console.log("home constrcutor");
+    console.log('home constrcutor')
   }
 
   // UNSAFE_componentWillMount() {
@@ -12,19 +12,15 @@ class Home extends PureComponent {
   // }
 
   render() {
-    return (
-      <div ref="title">
-        Home
-      </div>
-    )
+    return <div ref="title">Home</div>
   }
 }
 
 class Profile extends PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
 
-    console.log("profile constructor");
+    console.log('profile constructor')
   }
 
   // UNSAFE_componentWillMount() {
@@ -32,11 +28,7 @@ class Profile extends PureComponent {
   // }
 
   render() {
-    return (
-      <div ref="title">
-        Profile
-      </div>
-    )
+    return <div ref="title">Profile</div>
   }
 }
 
@@ -45,9 +37,9 @@ export default class App extends PureComponent {
     return (
       <div>
         <StrictMode>
-          <Home/>
+          <Home />
         </StrictMode>
-        <Profile/>
+        <Profile />
       </div>
     )
   }

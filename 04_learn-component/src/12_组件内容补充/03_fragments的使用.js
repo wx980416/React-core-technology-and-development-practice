@@ -1,16 +1,16 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react'
 
 export default class App extends PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       counter: 0,
       friends: [
-        {name: "why", age: 18},
-        {name: "lilei", age: 20},
-        {name: "kobe", age: 25},
-      ]
+        { name: 'why', age: 18 },
+        { name: 'lilei', age: 20 },
+        { name: 'kobe', age: 25 },
+      ],
     }
   }
 
@@ -18,19 +18,17 @@ export default class App extends PureComponent {
     return (
       <>
         <h2>当前计数: {this.state.counter}</h2>
-        <button onClick={e => this.increment()}>+1</button>
+        <button onClick={(e) => this.increment()}>+1</button>
         <div>
-          {
-            this.state.friends.map((item, index) => {
-              return (
-                <Fragment key={item.name}>
-                  <div>{item.name}</div>
-                  <p>{item.age}</p>
-                  <hr/>
-                </Fragment>
-              )
-            })
-          }
+          {this.state.friends.map((item, index) => {
+            return (
+              <Fragment key={item.name}>
+                <div>{item.name}</div>
+                <p>{item.age}</p>
+                <hr />
+              </Fragment>
+            )
+          })}
         </div>
       </>
     )
@@ -38,7 +36,7 @@ export default class App extends PureComponent {
 
   increment() {
     this.setState({
-      counter: this.state.counter + 1
+      counter: this.state.counter + 1,
     })
   }
 }

@@ -15,7 +15,8 @@ import ReactDOM from 'react-dom'
 // import App from './10_受控和非受控组件（表单）/05_非受控组件的使用'
 
 // import App from './11_高阶组件的使用/04_高阶组件的应用-增强props-改进'
-import App from './12_组件内容补充/02_portals的使用'
+// import App from './12_组件内容补充/02_portals的使用'
+import App from './12_组件内容补充/03_fragments的使用'
 import './css/index.css'
 
 ReactDOM.render(<App />, document.getElementById('root'))
