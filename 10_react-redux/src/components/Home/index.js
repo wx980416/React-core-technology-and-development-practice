@@ -1,45 +1,43 @@
 import React, { PureComponent } from 'react'
 
-import store from '../../store'
+import { connect } from 'react-redux'
 
-import { addACtion, delAction } from '../../store/actionCreators'
+import {
+  addACtion,
+  delAction,
+  getHomeMultidataAction,
+} from '../../store/actionCreators'
 
-export default class Home extends PureComponent {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      counter: store.getState().counter,
-    }
-  }
-
+class Home extends PureComponent {
   componentDidMount() {
-    this.unsubscribe = store.subscribe(() => {
-      this.setState({
-        counter: store.getState().counter,
-      })
-    })
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe()
+    this.props.getHomeMultidata()
   }
 
   render() {
     return (
       <div>
-        <h2>{this.state.counter}</h2>
-        <button onClick={(e) => this.add(10)}>+10</button>
-        <button onClick={(e) => this.del(10)}>-10</button>
+        <h2>{this.props.counter}</h2>
+        <button onClick={(e) => this.props.add(10)}>+10</button>
+        <button onClick={(e) => this.props.del(10)}>-10</button>
       </div>
     )
   }
-
-  add(num) {
-    store.dispatch(addACtion(num))
-  }
-
-  del(num) {
-    store.dispatch(delAction(num))
-  }
 }
+
+const mapStateToProps = (state) => ({
+  counter: state.counter,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  add(num) {
+    dispatch(addACtion(num))
+  },
+  del(num) {
+    dispatch(delAction(num))
+  },
+  getHomeMultidata() {
+    dispatch(getHomeMultidataAction)
+  },
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

@@ -1,2 +1,4 @@
 export const ADD_NUMBER = 'ADD_NUMBER'
 export const DEL_NUMBER = 'DEL_NUMBER'
+export const CHANGE_BANNERS = 'CHANGE_BANNERS'
+export const CHANGE_RECOMMEND = 'CHANGE_RECOMMEND'
